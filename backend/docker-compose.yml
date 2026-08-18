@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:16
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: canchazo
+      POSTGRES_USER: canchazo
+      POSTGRES_PASSWORD: canchazo
+    ports:
+      - "55432:5432"
+    volumes:
+      - canchazo_pgdata:/var/lib/postgresql/data
+
+volumes:
+  canchazo_pgdata:
